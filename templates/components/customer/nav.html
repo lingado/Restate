@@ -1,0 +1,57 @@
+{% load static %}
+<!-- <h1>{{ request.path }}</h1> -->
+{% url 'customer:house' as house_url %}
+{% url 'customer:properties' as properties_url %}
+{% url 'customer:contacts' as contacts_url %}
+
+<nav>
+    <div class="row align-items-center">
+        <!-- Logo section -->
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="{% url 'customer:index' %}" class="logo">
+                    <img src="{% static 'logos/restate.png' %}" width="90px" height="90px" alt="Restate Logo">
+                </a>
+            </div>
+        </div>
+        <!-- Navigation section -->
+        <div class="col-lg-6 col-md-6 col-sm-9">
+            <div class="d-flex justify-content-center align-items-center">
+                <ul>
+                    <li>
+                    <a href="{% url 'customer:index' %}" class="active">Home</a>
+                    </li>
+                    <li>
+                    <a href="{% url 'customer:house' %}"
+                    {% if request.path == house_url %}
+                    class="active"
+                    {% endif %}
+                        >Type of houses</a>
+                    </li>
+                    <li>
+                    <a href="{% url 'customer:properties' %}"
+                    {% if request.path == properties_url %}
+                        class="active"
+                    {% endif %}
+                        >Properties</a>
+                    </li>
+                    <li>
+                    <a href="{% url 'customer:contacts' %}"
+                    {% if request.path == contacts_url %}
+                        class="active"
+                    {% endif %}
+                        >Contact</a>
+                    </li>
+                </ul>
+            </div>
+           
+        </div>
+
+        <!-- Signup button section -->
+        <div class="col-3 d-none d-md-block d-block">
+            <div class="d-flex justify-content-center align-items-center">
+                <a href="#Signup" class=" btn-custom-secondary">Signup</a>
+            </div>
+        </div>
+    </div>
+</nav>

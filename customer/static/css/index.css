@@ -1,0 +1,5 @@
+.banner-heading{
+    font-weight: var(--heading-weight);
+    font-size: 2.5em;
+    font-family: var(--variant-font);
+}
