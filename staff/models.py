@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 class Amenities(models.Model):
     name= models.CharField(max_length=100)
-    image= models.ImageField(upload_to='media/amenities', null=True, blank=T)
+    image= models.ImageField(upload_to='media/amenities', null=True, blank=True)
 
 
 class HOuseType(models.Model):
@@ -21,12 +21,12 @@ class HOuseType(models.Model):
 
 class Location(models.Model):
     COUNTY_CHOICES = (
-        (001, "Mombasa"),
-        (003, "Kilifi"),
-        (022, "Kiambu"),
-        (042, "Kisumu"),
-        (032, "Nakuru"),
-        (047, "Nairobi"),
+        (1, "Mombasa"),
+        (3, "Kilifi"),
+        (22, "Kiambu"),
+        (42, "Kisumu"),
+        (32, "Nakuru"),
+        (47, "Nairobi"),
         
     )
     county= models.IntegerField(choices=COUNTY_CHOICES)
@@ -40,7 +40,7 @@ class House(models.Model):
         (UNAVAILABLE, "Unavailable")
     )
     name= models.CharField(max_length=100)
-    price= models.DecimalField()
+    price= models.DecimalField(decimal_places=2, max_digits=15)
     Location= models.ForeignKey(Location, on_delete=models.PROTECT)
     image= models.ImageField(upload_to='media/houses')
     house_type = models.ForeignKey(HOuseType, on_delete=models.PROTECT)
@@ -54,7 +54,8 @@ class HouseAmenity(models.Model):
 class Customer(models.Model):
     first_name= models.CharField(max_length=100)
     last_name= models.CharField(max_length=100)
-    national_id_front= models.ImageField(upload_to='media/ ')
-    national_id_back= models.ImageField(upload_to='media/ ')
+    national_id_front= models.ImageField(upload_to='media/id_front')
+    national_id_back= models.ImageField(upload_to='media/id_back')
     phone= models.IntegerField()
+    email= models.EmailField()
     profile_img= models.ImageField(upload_to='media/ ')
