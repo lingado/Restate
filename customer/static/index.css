@@ -124,3 +124,6 @@ select{
     min-height: 230px;
     object-fit: cover !important;
 }
+.call{
+    font-size: xx-large;
+}
