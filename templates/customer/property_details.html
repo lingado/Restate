@@ -1,0 +1,12 @@
+{% extends 'layouts/customer_base.html' %}
+
+{% block title%} {{ property.name}}{% endblock %}
+{% load static %}
+{% block content %}
+<div class="container" class="text-light">
+    <h1>{{ property.name }}</h1>
+    <h1>{{ property.price }}</h1>
+    <h1>{{ property.Location.name }}</h1>
+</div>
+
+{% endblock %}

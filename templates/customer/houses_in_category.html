@@ -1,0 +1,15 @@
+{% extends 'layouts/customer_base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="container mt-3">
+<div class="row">
+{% for property in properties %}
+    <div class="col-3">
+        {% include 'components/customer/property_card.html' %}
+    </div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

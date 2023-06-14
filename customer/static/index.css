@@ -55,10 +55,7 @@
     min-height: 60vh;
 }
 
-.bg-secondary-transparent{
-    background: linear-gradient(rgba(254, 79, 20,0.7), rgba(254, 79, 20, 0.7)) !important;
-    background-color: transparent !important;
-}
+
 .rounded-card{
     border-radius: 15px;
 }
@@ -71,7 +68,7 @@ select{
 }
 /* Fonts */
 .title-font{
-    font-size: 1.9rem;
+    font-size: 1.6rem;
     font-weight: var(--title-weight);
 }
 .property-card-border{

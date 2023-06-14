@@ -3,6 +3,18 @@
 
 {% block content %}
 <div class="container">
-<h1>Property types available</h1>
+    <h1>Property types available</h1>
+
+    <div class="row" >
+    
+        {% for house_type in house_types %}
+        <div class="col-sm-12 col-md-4 col-lg-4 mt-2">
+            {% include 'components/customer/house_type_card.html' %}
+        </div>
+        {% endfor %}
+ 
+    
+    </div>
 </div>
+
 {% endblock %}
