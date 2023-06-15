@@ -117,12 +117,7 @@ def houses_in_category(request, category_id):
 
     return render(request, "customer/houses_in_category.html", context)
 
-def all_properties(request):
-    all_properties = House.objects.all()
-
-    context = {
-        "houses" : all_properties
-    }
-
-    return render(request, "customer/properties.html", context)
+def search(request):
+    
+    
    
