@@ -9,6 +9,7 @@ urlpatterns = [
     path('contacts/',contacts, name="contacts"),
     path('submit-message/',submit_message, name="submit-message"),
     path('houses/details/<property_id>',property_details, name="property-details"),
-    path('house-categories/houses/<category_id>',houses_in_category, name="house-categories-details")
+    path('house-categories/houses/<category_id>',houses_in_category, name="house-categories-details"),
+    path('search/',search_results,name="search-results")
 
 ]
