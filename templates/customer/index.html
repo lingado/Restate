@@ -1,5 +1,6 @@
 {% extends 'layouts/customer_base.html' %}
 {% load static %}
+{% load floor_rounding %}
 {% block title %}Restate-Affordable-Homes{% endblock %}
 {% block style %}
     <link rel="stylesheet" href="{% static 'index.css' %}">
@@ -16,14 +17,14 @@
                     <img src="{% static 'images/bannerimage.jpg' %}" class="image">
                 </div>
                 <div class="col-sm-12 col-md-3 col-lg-3 mt-5 text-center">
-                    <h1 class="mt-5">12</h1>
-                    <h6>Years of experience</h6>
+                    <h1 class="mt-5">{{ locations.count }}</h1>
+                    <h6>Current locations</h6>
+                    <br>
+                    <h1>{{ properties.count|round_down:"5" }}</h1>
+                    <h6>Properties build</h6>
                     <br>
                     <h1>18</h1>
                     <h6>Awards gained</h6>
-                    <br>
-                    <h1>150+</h1>
-                    <h6>Properties build</h6>
                 </div>
             </div>
         </div>
@@ -37,7 +38,7 @@
         <div class="container mt-2">
             <h2 class="title-font my-4">Latest property this month</h2>
             <div class="row">
-                {% for property in properties %}
+                {% for property in properties|slice:":5" %}
                     <div class="col-sm-12 col-md-4 col-lg-4 mt-2">
                         {% include 'components/customer/property_card.html' %}
                     </div>
