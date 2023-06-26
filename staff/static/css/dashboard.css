@@ -5,6 +5,7 @@
     --primary-color: rgb(23, 23, 23);
     --secondary-color: rgb(254,79, 20);
     --secondary-color-brighter: rgb(226, 97, 55);
+    --secondary-color-darker: #a2300a;
     --primary-variant: rgb(235, 235, 235);
     --secondary-variant: rgb(0, 20, 44);
 
@@ -36,4 +37,29 @@
     right: 0;
     top: 0;
     left: 25vw;
+}
+.sidebar ul{
+    list-style: none;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    padding: 0;
+    margin: 25px 0 0 0;
+}
+.sidebar ul li{
+    margin: 0px 5px;
+}
+.sidebar ul li a{
+    color: var(--primary-variant);
+    padding: 10px 16px;
+    display: block;
+    text-align: start;
+    text-decoration: none;
+}
+.active{
+    color: var(--secondary-color) !important;
+    background-color: var(--primary-variant);
+}
+.sidebar ul li a:hover{
+    background-color: var(--secondary-color-darker);
 }

@@ -1,22 +1,40 @@
 {% load static %}
-<div class="sidebar mt-3 p-3 align-items-center">
-    <div class="row">
-        <a href="{% url 'staff:houses' %}" style="text-decoration: none; color: white; font-size: xx-large;">-Houses</a>
-    </div>
-    <div class="row">
-        <a href="{% url 'staff:location' %}" style="text-decoration: none; color: white; font-size: xx-large;">-Locations</a>
-    </div>
-    <div class="row">
-        <a href="{% url 'customer:houses' %}" style="text-decoration: none; color: white; font-size: xx-large;">-House Types</a>
-    </div>
-    <div class="row">
-        <a href="{% url 'staff:customer' %}" style="text-decoration: none; color: white; font-size: xx-large;">-Messages</a>
-    </div>
-    <div class="row">
-        <a href="{% url 'customer:index' %}" style="text-decoration: none; color: white; font-size: xx-large; margin-top: 30px;">-Account</a>
-    </div>
-    <div class="row">
-        <a href="#" style="text-decoration: none; color: white; font-size: xx-large; margin-top: 280px;">-Logout</a>
-    </div>
+{% url 'staff:dashboard' as dashboard_url %}
+{% url 'staff:location' as locations_url %}
+{% url 'staff:houses' as houses_url %}
+<div class="sidebar">
+   <ul>
+        <li>
+            <a href="{{ dashboard_url }}"
+            {% if request.path == dashboard_url %}
+            class="active"
+            {% endif %}
+            >Dashboard</a>
+        </li>
+        <li>
+            <a href="#categories">Categories</a>
+           
+        </li>
+        <li>
+            <a href="{{ houses_url }}"
+            {% if request.path == houses_url %}
+            class="active"
+            {% endif %}>Houses</a>
+            
+        </li>
+        <li>
+            <a href="{{ locations_url }}"
+            {% if request.path == locations_url %}
+            class="active"
+            {% endif %}>Locations</a>
+        </li>
+        <li>
+            <a href="#messages"
+            >Messages</a>
+        </li>
+        <li>
+            <a href="#account">Account</a>
+        </li>
+   </ul>
 
 </div>
