@@ -35,6 +35,9 @@ class Location(models.Model):
         (42, "Kisumu"),
         (32, "Nakuru"),
         (47, "Nairobi"),
+        (21, "Murang'a"), 
+        (2, "Kwale"),
+        (5, "Lamu"),
         
     )
     county= models.IntegerField(choices=COUNTY_CHOICES)

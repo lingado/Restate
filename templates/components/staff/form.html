@@ -1,0 +1,11 @@
+{% load static %}
+{% load widget_tweaks %}
+{% csrf_token %}
+{% for input in form %}
+    <div class="form-group">
+        <span class="font-weight-bold">{{ input.label }}</span>
+        <p>{{ input|add_class:'form-control bg-dark text-light'}}</p>
+        <small class="text-danger">{{ input.errors }}</small>
+     </div>
+               
+{% endfor %}

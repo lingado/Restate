@@ -1,0 +1,22 @@
+{% extends 'layouts/staff_base.html' %}
+{% load widget_tweaks %}
+
+{% block title %}House Form{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1 class="mt-3">Create new house</h1>
+        <form action="{% url 'staff:houses' %}" method="POST" class="mt-3" enctype="multipart/form-data">
+            {% for input in form %}
+                <div class="form-group">
+                    <span class="font-weight-bold">{{ input.label }}</span>
+                    <p>{{ input|add_class:'form-control bg-dark text-light'}}</p>
+                    <small class="text-danger">{{ input.errors }}</small> 
+                </div>
+               
+              {% endfor %}
+            <button type="submit" class="btn-custom-secondary text-light">Create</button>
+        </form>
+    </div>
+
+{% endblock %}

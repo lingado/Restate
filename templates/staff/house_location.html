@@ -1,0 +1,15 @@
+{% extends 'layouts/staff_base.html' %}
+{% load static %}
+
+{% block title%} {{ house.name }}{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>{{ house.name }}</h1>
+    <form action="{% url 'staff:house-location' house.Location.id house.id %}" method="POST" class="mt-3"enctype="multipart/form-data">
+    {% include 'components/staff/form.html' %}
+    <button class="btn-custom-secondary" type="submit">Update</button>
+    </form>
+
+    </div>
+
+{% endblock %}
