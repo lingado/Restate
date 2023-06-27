@@ -8,8 +8,15 @@
         <h1 class="mt-3">Create new house type</h1>
         <form action="{% url 'staff:house-type' %}" method="POST" class="mt-3" enctype="multipart/form-data">
             {% csrf_token %}
-            <button type="submit" class="btn-custom-secondary text-light">Create</button>
+           
+            <button type="submit" class="btn-custom-secondary text-light mb-5">Create</button>
         </form>
+        {% for housetype in housetypes %}
+        <h2 class="mt-2">
+            <button class="m-1 btn-custom-secondary" style="width: 150px;" >{{ housetype.name }} ({{ housetype.get_choices_display }})</button>
+        </h2>
+      
+        {% endfor %}
     </div>
 
 {% endblock %}

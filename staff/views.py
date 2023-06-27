@@ -61,7 +61,8 @@ def housetypes(request):
             return redirect('customer:index')
 
     context = {
-        'form' : form
+        'form' : form,
+        'housetypes' : HouseType.objects.all()
     }
     return render(request, "staff/housetype_form.html", context)
 
@@ -85,15 +86,27 @@ def house_location_details(request, location_id, property_id):
            form = HouseForm(request.POST, request.FILES, instance=house)
            if form.is_valid:
             form.save()
-
-
-       
-      
-
     context = {
       "house" : house,
       "form" : form
     }
     return render(request, "staff/house_location.html", context)
+
+def messages(request):
+    all_messages = Message.objects.filter(is_read=False)
+
+    context = {
+        "messages" : all_messages
+    }
+    return render(request, "staff/messages.html", context)
+
+def message_details(request, message_id):
+    message = Message.objects.get(id=message_id)
+
+    context = {
+        "message" : message
+    }
+
+    return render(request, "staff/message_details.html", context)
 
 

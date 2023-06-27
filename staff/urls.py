@@ -8,6 +8,8 @@ urlpatterns=[
     path('location/', location, name="location"),
     path('housetype/', housetypes, name="house-type"),
     path('location/houses/<location_id>',location_houses, name="location-houses"),
-    path('location/house/<location_id>/<property_id>', house_location_details, name="house-location")
+    path('location/house/<location_id>/<property_id>', house_location_details, name="house-location"),
+    path('messages/', messages, name="messages"),
+    path('message_details/<message_id>', message_details, name="message-details")
 
 ]
